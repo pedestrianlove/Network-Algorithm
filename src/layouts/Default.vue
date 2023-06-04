@@ -6,9 +6,9 @@
       </strong>
       <nav class="nav">
         <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/HC/">Hill Climbing</g-link>
-        <g-link class="nav__link" to="/SA/">Simulate Anneal</g-link>
-        <g-link class="nav__link" to="/GA/">Genetic</g-link>
+        <g-link class="nav__link" to="/hc/">Hill Climbing</g-link>
+        <g-link class="nav__link" to="/sa/">Simulate Anneal</g-link>
+        <g-link class="nav__link" to="/ga/">Genetic</g-link>
       </nav>
     </header>
     <slot/>
