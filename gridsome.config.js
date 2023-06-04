@@ -6,5 +6,7 @@
 
 module.exports = {
   siteName: 'Gridsome',
+  siteUrl: 'https://pedestrianlove.github.io',
+  pathPrefix: '/Network-Algorithm',
   plugins: []
 }
