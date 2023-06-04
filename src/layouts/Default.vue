@@ -6,7 +6,9 @@
       </strong>
       <nav class="nav">
         <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
+        <g-link class="nav__link" to="/HC/">Hill Climbing</g-link>
+        <g-link class="nav__link" to="/SA/">Simulate Anneal</g-link>
+        <g-link class="nav__link" to="/GA/">Genetic</g-link>
       </nav>
     </header>
     <slot/>
@@ -48,3 +50,5 @@ body {
   margin-left: 20px;
 }
 </style>
+<script setup>
+</script>
