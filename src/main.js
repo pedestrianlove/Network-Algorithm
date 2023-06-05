@@ -22,6 +22,9 @@ export default function (Vue, { router, head, isClient }) {
 
   // Setup tippy.js
   Object.defineProperty(Vue.prototype, '$tippy', { value: tippy });
+
+  // Setup d3.js
+  Object.defineProperty(Vue.prototype, '$d3', { value: d3 });
 }
 
 
