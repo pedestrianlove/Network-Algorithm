@@ -24,7 +24,41 @@ export default function (Vue, { router, head, isClient }) {
   Object.defineProperty(Vue.prototype, '$tippy', { value: tippy });
 
   // Setup d3.js
-  Object.defineProperty(Vue.prototype, '$d3', { value: d3 });
+  Vue.prototype.$d3 = d3;
+
+  // Setup method to populate data
+  Vue.prototype.$generateData = function generateData(numVertices, numEdges) {
+    const graphData = {
+      nodes: [],
+      links: []
+    };
+
+    // Generate vertices
+    for (let i = 1; i <= numVertices; i++) {
+      graphData.nodes.push({ id: i, label: `${i}` });
+    }
+
+    // Generate minimum spanning tree(connected.)
+    const edges = [];
+    for (let i = 1; i <= numVertices - 1; i++) {
+      edges.push({ source: i, target: i + 1 });
+    }
+
+    // Generate remaining edges randomly
+    while (edges.length < numEdges) {
+      const source = Math.floor(Math.random() * numVertices) + 1;
+      let target = Math.floor(Math.random() * numVertices) + 1;
+
+      // Make sure target is not the same as source or already connected
+      if (source !== target && !edges.some(edge => (edge.source === source && edge.target === target) || (edge.source === target && edge.target === source))) {
+        edges.push({ source, target });
+      }
+    }
+
+    graphData.links = edges;
+
+    return graphData;
+  };
 }
 
 
